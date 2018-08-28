@@ -9,12 +9,27 @@ exports.seed = async (knex, Promise) => {
       {
         name: "Ubuntu Women Shelter",
         address: "G4",
-        details: "very big shelter...."
+        details: "very big shelter....",
+        phone:"00112233",
+        logoUrl:"",
+        email:"AVA@gmail.com",
+        officeAddress:"glasgow",
+        whoWeAre:"cyf",
+        whatWeDo:"supporting womens",
+        support:"",
+
       },
       {
         name: "Edinburgh Men Shelter",
         address: "E1",
-        details: "men shelter...."
+        details: "men shelter....",
+        phone:"00445566",
+        logoUrl:"",
+        email:"AVA.a@gmail.com",
+        officeAddress:"glasgow",
+        whoWeAre:"cyf",
+        whatWeDo:"supporting womens",
+        support:"",
       }
     ]);
 
