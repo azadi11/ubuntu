@@ -5,12 +5,12 @@ exports.up = async (knex, Promise) => {
     table.string("address");
     table.string("details");
     table.string("phone");
-    table.string("logo-url");
+    table.string("logo");
     table.string("email");
-    table.string("office-address");
-    table.string("who-we-are");
+    table.string("officeAddress");
+    table.string("whoWeAre");
     table.string("support");
-    table.string("what-we-do");
+    table.string("whatWeDo");
   });
   await knex.schema.createTable("referrals", table => {
     table.increments("referral_id");
