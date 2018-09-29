@@ -8,7 +8,7 @@ import HeroImage from '../../components/HeroImage'
 class Shelters extends Component {
   state = {
     shelter: {}
-  }
+  };
   componentDidMount() {
     const { shelterId } = this.props.match.params
     if(!shelterId) {
@@ -27,6 +27,7 @@ class Shelters extends Component {
     return (
       <div>
         <ShelterHeader shelter={this.state.shelter} />
+        <h1>Shelter home</h1>
         <HeroImage shelterId={shelterId} />
         <ShelterFooter />
       </div>
