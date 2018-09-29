@@ -12,7 +12,6 @@ import VolunteersForm from "../../components/VolunteersForm";
 import Login from "../../components/Login/Login";
 import axios from "axios";
 import ShelterHome from "../Shelters/ShelterHome";
-//import Shelters from "../../components/Shelters";
 
 class App extends Component {
   state = {
@@ -38,16 +37,7 @@ class App extends Component {
     return (
       <Router>
         <div className="app">
-          <Link to="/organisations-register">Register Organisation</Link> |{" "}
-          <Link to="/Shelters">Shelters</Link> |{" "}
-          <Link to="/contact">Contact</Link> |{" "}
-          {!token && <Link to="/login">Login</Link>}
-          {!!token && (
-            <button className="btn btn-primary" onClick={this.logout}>
-              Logout
-            </button>
-          )}
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={ShelterHome} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={ContactUs} />
           <Route exact path="/shelters" component={Shelters} />
