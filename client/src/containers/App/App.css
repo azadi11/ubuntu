@@ -66,7 +66,7 @@ html, body {
   padding: 20px;
 }
 
-  #heroCarousel h1 {
+#heroCarousel h1 {
   color: white
 }
 
@@ -75,9 +75,8 @@ html, body {
 }
 
 /* #heroCarousel .carousel-caption {
-  /* background: white */
+  background: white 
 }  */
-
 
 .logo-image {
   width: 70%;

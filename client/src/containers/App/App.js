@@ -14,6 +14,7 @@ import Login from "../../components/Login/Login";
 import axios from "axios";
 import Shelters from "../Shelters/Shelters";
 import ShelterHome from "../Shelters/ShelterHome";
+import CoverYourTracks from "../../components/CoverYourTracks";
 
 class App extends Component {
   state = {
@@ -36,14 +37,15 @@ class App extends Component {
   render() {
     const token = localStorage.getItem("jwtToken");
     // if (!token) return null
+    console.log('appppp', this.props);
+    
     return (
       <Router>
         <div className="app">
           <Route exact path="/" component={ShelterHome} />
-          <Route path="/about" component={About} />
+          <Route exact path="/shelters/:shelterId" component={ShelterHome} />
           <Route path="/contact" component={ContactUs} />
           <Route exact path="/shelters" component={Shelters} />
-          <Route path="/shelters/:shelterId" component={ShelterHome} />
           <Route path="/referrals" component={Referrals} />
           <Route path="/users" component={Users} />
           <Route path="/Volunteers" component={VolunteersForm} />
@@ -52,11 +54,12 @@ class App extends Component {
             path="/organisations-register"
             component={OrganisationsRegister}
           />
+          <Route path="/about" component={About} />
           <Route path="/who-we-are" component={About} />
           <Route path="/what-we-do" component={About} />
           <Route path="/who-we-support" component={About} />
-          <Route path="/Shelters" component={Shelters} />
           <Route path="../ShelterFooter" component={ShelterFooter} />
+          <Route path="../CoverYourTracks" component={CoverYourTracks} />
         </div>
       </Router>
     );

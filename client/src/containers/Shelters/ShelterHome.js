@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import ShelterHeader from "./ShelterHeader";
-import ShelterFooter from "./ShelterFooter";
+import ShelterFooter from "../../components/Footer/ShelterFooter";
 import * as api from '../../helpers/api'
 import { withRouter } from 'react-router-dom'
 import HeroImage from '../../components/HeroImage'
+import Home from "../Home/Home";
+
 
 class Shelters extends Component {
   state = {
@@ -11,10 +13,10 @@ class Shelters extends Component {
   };
   componentDidMount() {
     const { shelterId } = this.props.match.params
-    if(!shelterId) {
-      this.props.history.push('/shelters/1')
-      return
-    }
+    // if(!shelterId) {
+    //   this.props.history.push('/shelters/1')
+    //   return
+    // }
     api.getSingleShelter(shelterId).then(data => {
       this.setState({
         shelter: data
@@ -24,12 +26,12 @@ class Shelters extends Component {
 
   render() {
     const { shelterId } = this.props.match.params
+    const path = this.props.match.path
     return (
       <div>
         <ShelterHeader shelter={this.state.shelter} />
-        <h1>Shelter home</h1>
         <HeroImage shelterId={shelterId} />
-        <ShelterFooter />
+        <Home />
       </div>
     );
   }
